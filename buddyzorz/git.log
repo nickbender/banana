@@ -1,0 +1,59 @@
+commit ce7295fa87414f6308c51a591198caf6e8d92074
+Author: Nick Bender <nickbender@gmail.com>
+Date:   Sun Dec 14 19:56:46 2014 +0000
+
+    Finish up the libs and fix the paranoid free bug
+
+commit 485b7700ff21f8f5f815b737777ee395dbb29a07
+Author: nickbender <nickbender@gmail.com>
+Date:   Sat Dec 13 16:27:54 2014 -0700
+
+    Get Calloc working
+
+commit 3f1a868fcd8b4e05d6def91253062ae5dc24e2a8
+Author: nickbender <nickbender@gmail.com>
+Date:   Sat Dec 13 16:21:37 2014 -0700
+
+    Get free working
+
+commit 8df8018dcf9c7da6e7a67b7257139de5f37e2030
+Author: nickbender <nickbender@gmail.com>
+Date:   Fri Dec 12 15:24:37 2014 -0700
+
+    Try some print debug
+
+commit f327b347f72505c11400b83bf5f1715b649a9cef
+Author: nickbender <nickbender@gmail.com>
+Date:   Fri Dec 12 15:04:20 2014 -0700
+
+    Fix Malloc
+
+commit 0f81e15775a0538b489671d49db8b1a5ce6d37a6
+Author: nickbender <nickbender@gmail.com>
+Date:   Fri Dec 12 13:32:33 2014 -0700
+
+    Malloc round 1
+
+commit 16081f7e615c0d7658c154e7c4f026ce722311cb
+Author: nickbender <nickbender@gmail.com>
+Date:   Wed Dec 10 17:41:53 2014 -0700
+
+    Wrap my head around this nonsense and get v1 of vuddy_init going
+
+commit 2fa12155b4a4035b3dfba0e724079e8d023a93b7
+Author: nickbender <nickbender@gmail.com>
+Date:   Wed Dec 10 13:48:32 2014 -0700
+
+    Clean
+
+commit d0adf30734e676142440c831c3703ec3aa51a510
+Author: nickbender <nickbender@gmail.com>
+Date:   Wed Dec 10 13:48:16 2014 -0700
+
+    Initial commit (get it building and stubbed)
+
+commit 3f4107ef7cdfc4647e93f8d8ef997ccfd9b7bec6
+Author: Nick Bender <nickbender@gmail.com>
+Date:   Wed Dec 10 13:49:04 2014 -0700
+
+    Initial commit

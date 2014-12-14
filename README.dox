@@ -1,0 +1,110 @@
+
+/**
+
+@mainpage
+
+CS453 Project 5 "My Dash - Redux"
+
+@author nickbender
+
+
+<pre>
+
+
+README              This file
+doxygen-config      Sample config file for doxygen
+loop.ca             Simple infinite loop program that doesn't use significant resources
+Makefile            Build file for this mydash
+TestCases           An list of test cases
+test-harness/       An example (incomplete) test harness for the dash project
+test-readline.c     Example file on how to use auto completion with readline library
+valgrind.supp       Example suppression file for valgrind to avoid lots of spurious error messages about the readline library
+buddyzorz           Source code for Buddy System memory allocation
+  /buddy-unit-test  Unit test framework for buddy memory allocation
+  /buddy-test       Speed and general test for buddy memory allocation
+
+Design (from P1)
+-------
+
+Thus far the entirety of the project is within the mydash.c file. The reasoning for this was the lack of need for reasonable abstractions beyond method handling. As this program evolves, separating out jobs handing and base call parsing to their own file would significantly clean up the expand_and_execute method.
+
+Test cases with my additions can be found in the TestCases file.
+
+The biggest challenges of this assignment had to do with a simple problem of removing the ampersand characters and then finding a bug in my removeHead method that was causing my list to never be completely removed.
+
+
+Buddy Memory Allocator Design
+-------
+For the buddy-system memory allocator, I opted to keep most of the code required in the singular methods that would map to the
+malloc interface. I did however chose to move a recursive call required for free into it's own method.
+
+
+Running
+-------
+Run the program by running:
+$ ./mydash
+
+Run the program using the buddy memory system library by running:
+$ LD_LIBRARY_PATH=$(pwd)/lib/ LD_PRELOAD=libbuddy.so ./mydash
+
+
+
+Buddy Memory Allocator Challenges
+-------
+The Memory management of the Buddy Allocator was a very challenging project. Ultimately getting my head wrapped around the structure of the
+algorithm was far harder than the actual code implementaiton, although off-by-1 errors as well as seg faults due to slight arithmatic oversights
+were prevalent.
+
+I reached a point where my buddy-test was passing as well as my buddy-unit-test, but still managed to get a segfault on reallocation.
+
+
+Buddy Allocation Performance
+-------
+My performance for the buddy-list was significantly faster than the system malloc.
+
+Results as follows:
+
+[vagrant@localhost buddyzorz]$ time ./buddy-test 20000000 1234 s
+TestBuddy:: Success
+
+real	0m1.304s
+user	0m0.102s
+sys	0m0.336s
+[vagrant@localhost buddyzorz]$ time ./malloc-test 20000000 1234 s
+
+real	0m2.681s
+user	0m1.977s
+sys	0m0.001s
+
+
+Opportunities for Improvement
+-------
+* Ultimately, having a fixed memory allocation of 512MB isn't usable for a system that could have far greater need for memory.
+* Realloc could use more thorough testing.
+
+
+
+Valgrind
+--------
+
+
+Use valgrind as follows
+
+valgrind --leak-check=yes --suppressions=valgrind.supp dash
+
+You will need the suppression file valgrind.supp that suppresses errors from
+the readline library so you can focus on issues emanating from your code.
+
+Documentation
+-------------
+
+Generate documentation using doxygen tool. Use
+
+make dox
+
+to trigger doxygen. Use the sample doxygen-config file for using with your
+project. Note that, just like javadocs, you can use any HTML tags in your
+comments. All javadoc tags and comments are supported by doxygen.
+</pre>
+
+*/
